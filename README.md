@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# CarbonTrack AI
 
-## Project info
+CarbonTrack AI is a Vite + React sustainability dashboard for analyzing environmental records, tracking carbon and resource metrics, and exploring reduction opportunities across water, waste, energy, and materials.
 
+The app ships with demo data by default and supports uploading CSV or Excel files to analyze custom environmental records in the browser.
 
+## Features
 
-## How can I edit this code?
+- Carbon footprint dashboard with emissions summary, trend charts, predictions, and recommendations
+- File upload for CSV, XLSX, and XLS input, with basic validation and processing feedback
+- Water, waste, waste-to-energy, renewable energy, and sustainable materials views
+- AI monitoring, environmental GIS, education, SDG dashboard, and requirements pages
+- Responsive layout with a desktop sidebar and mobile drawer navigation
+- Demo data reset when custom data has been loaded
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- Vite
+- React 18
+- TypeScript
+- React Router
+- TanStack Query
+- Tailwind CSS
+- shadcn/ui
+- Recharts
+- Leaflet
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18 or newer
+- npm, pnpm, or bun
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Install dependencies
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Start the development server
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the local Vite URL shown in the terminal.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for production
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Preview the production build
 
-## What technologies are used for this project?
+```sh
+npm run preview
+```
 
-This project is built with:
+### Run linting
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```sh
+npm run lint
+```
 
-## How can I deploy this project?
+## Usage
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. Open the dashboard at `/` to view the default sustainability summary.
+2. Use the Upload Data Log button to import a CSV or Excel file.
+3. Review emissions, energy, water, waste, and prediction panels after upload.
+4. Navigate through the sidebar to explore the focused sustainability modules.
+5. Use Reset to Demo Data to restore the bundled sample dataset.
 
-## Can I connect a custom domain to my Lovable project?
+## Data Format
 
-Yes, you can!
+The uploader accepts CSV, XLSX, and XLS files up to 10 MB. The dashboard expects environmental records with resource usage metrics that can be parsed into the app’s internal environmental data model.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `src/App.tsx` wires routing, providers, and global UI shells
+- `src/components/Dashboard.tsx` renders the main analytics dashboard
+- `src/components/FileUpload.tsx` handles file selection and validation
+- `src/context/EnvironmentalContext.tsx` stores the active dataset and demo reset state
+- `src/lib/` contains parsing and sustainability calculation helpers
+- `src/pages/` contains the routed sustainability modules
+
+## Notes
+
+- The repository currently does not contain any backend secrets or environment files.
+- If you add API keys or service credentials later, store them in GitHub Secrets or a local `.env.local` file and keep them out of version control.
+
+## License
+
+No license file is currently included in the repository.
